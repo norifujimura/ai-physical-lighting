@@ -1,0 +1,210 @@
+# AI for Physical Experience
+
+## Overview
+From pixels to physical experience.
+
+AI for Physical Experience is a series of practical Creative Technology prototypes exploring how artificial intelligence can move beyond screens to shape tangible interactions with light, sound, movement, objects, and space.
+
+Rather than demonstrating AI for its own sake, the goal is to build small, working systems that connect perception, reasoning, and physical output.
+
+Each repository in this series is intentionally independent while sharing a common design philosophy and software architecture.
+
+---
+
+## Design Principles
+
+### Physical First
+
+The final output should exist in the physical world whenever possible.
+
+Examples include:
+
+- lighting
+- projection
+- sound
+- moving objects
+- kinetic structures
+- tangible interaction
+
+The computer is not the destination.
+It is part of the control system.
+
+---
+
+### Rapid Prototyping
+
+Build the smallest useful prototype first.
+
+Prefer:
+
+- working demos
+- short iterations
+- frequent Git commits
+
+Avoid:
+
+- premature optimisation
+- unnecessary abstraction
+- speculative architecture
+
+---
+
+### Human-Centred Interaction
+
+Technology exists to support human experience.
+
+Every prototype should begin with a user scenario rather than a technical feature.
+
+---
+
+### Modular Architecture
+
+Each software component should have a single responsibility.
+
+Typical modules include:
+
+Camera
+
+↓
+
+Scene Analysis
+
+↓
+
+Decision Engine
+
+↓
+
+Physical Output
+
+Each module should be replaceable without changing the others.
+
+---
+
+### Simple over Clever
+
+Choose the simplest solution that satisfies the current requirements.
+
+Complexity should only be introduced when it solves a real problem.
+
+---
+
+### AI as One Component
+
+AI is one module inside a larger interactive system.
+
+The goal is not to maximise AI usage.
+
+The goal is to build better physical experiences.
+
+Rule-based systems are acceptable when they provide a simpler solution.
+
+---
+
+### Hardware Independence
+
+Whenever practical:
+
+- separate hardware drivers
+- isolate device-specific code
+- make hardware replaceable
+
+The interaction logic should not depend on a specific device.
+
+---
+
+### Public Development
+
+Projects are developed in public.
+
+Repositories should demonstrate:
+
+- readable code
+- clear commits
+- understandable documentation
+- maintainable architecture
+
+Each repository should be approachable by another developer within a few minutes.
+
+---
+
+## Repository Structure
+
+Each repository should contain:
+
+README.md
+
+Project documentation
+
+Source code
+
+Architecture description
+
+Roadmap
+
+Demo materials
+
+Future work
+
+The repositories should feel consistent across the series while remaining independent.
+
+---
+
+## Software Philosophy
+
+Prefer:
+
+- small modules
+- explicit code
+- readable functions
+- minimal dependencies
+- iterative development
+
+Avoid:
+
+- large frameworks
+- unnecessary design patterns
+- tightly coupled modules
+- hidden behaviour
+
+---
+
+## Git Philosophy
+
+Make small commits.
+
+Each commit should represent one meaningful improvement.
+
+A repository should tell the story of the project's evolution.
+
+---
+
+## Documentation Philosophy
+
+Documentation is part of the project.
+
+A prototype is not complete until another developer can understand:
+
+- what it does
+- why it exists
+- how it works
+- how to extend it
+
+---
+
+## Success Criteria
+
+A successful repository demonstrates:
+
+- a complete interaction loop
+- modular architecture
+- practical implementation
+- clean code
+- clear documentation
+- reproducible setup
+- physical interaction
+- professional software engineering
+
+The objective is not to build the largest system.
+
+The objective is to build the clearest one.

@@ -1,3 +1,4 @@
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from pathlib import Path
@@ -7,6 +8,12 @@ app = FastAPI(
     title="AI Physical Lighting",
     description="Minimal API for the AI for Physical Experience adaptive lighting prototype.",
     version="0.1.0",
+)
+
+app.mount(
+    "/static",
+    StaticFiles(directory="frontend"),
+    name="static",
 )
 
 

@@ -1,3 +1,6 @@
+from fastapi.responses import FileResponse
+
+from pathlib import Path
 from fastapi import FastAPI
 
 app = FastAPI(
@@ -9,15 +12,15 @@ app = FastAPI(
 
 @app.get("/")
 def root():
-    return {
-        "name": "AI Physical Lighting",
-        "status": "running",
-    }
+    return FileResponse(
+        Path("frontend") / "index.html"
+    )
 
 
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
 
 @app.post("/analyse")
 

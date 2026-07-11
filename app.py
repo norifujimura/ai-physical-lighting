@@ -18,3 +18,21 @@ def root():
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.post("/analyse")
+
+def analyse():
+
+    return {
+
+        "status": "success",
+
+        "scene": {
+
+            "brightness": "unknown",
+
+            "dominant_color": "unknown",
+
+        },
+
+    }

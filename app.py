@@ -1,3 +1,4 @@
+from backend.vision import capture_frame, save_frame
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
@@ -30,19 +31,17 @@ def health_check():
 
 
 @app.post("/analyse")
-
 def analyse():
 
+    frame = capture_frame()
+
+    filepath = save_frame(frame)
+
     return {
-
         "status": "success",
-
+        "image": str(filepath),
         "scene": {
-
             "brightness": "unknown",
-
             "dominant_color": "unknown",
-
         },
-
     }

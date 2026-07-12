@@ -2,115 +2,223 @@
 
 This document tracks the development progress of the project.
 
+Each sprint delivers one small, testable improvement while keeping the software simple, modular, and maintainable.
+
 ---
 
-## Sprint 0 — Project Setup
+# Sprint 0 — Project Setup
+
 **Status:** ✅ Complete
 
-### Goal
+## Goal
+
 Create the initial project structure.
 
-### Completed
+## Completed
+
 - Created GitHub repository
 - Added README
+- Added project documentation
 - Set up FastAPI
 - Created frontend and backend folders
 
 ---
 
-## Sprint 1 — FastAPI Basics
+# Sprint 1 — FastAPI Basics
+
 **Status:** ✅ Complete
 
-### Goal
+## Goal
+
 Understand the FastAPI application structure.
 
-### Completed
+## Completed
+
 - GET /
 - GET /health
 - Swagger UI (/docs)
 
-### Lessons Learned
+## Lessons Learned
+
 - FastAPI automatically converts Python dictionaries to JSON.
-- Static files should be served separately from API endpoints.
-- Keep endpoints small and focused.
+- API endpoints should remain small and focused.
+- FastAPI provides interactive API documentation automatically.
 
 ---
 
-## Sprint 2 — Analyse API
+# Sprint 2 — Analyse API
+
 **Status:** ✅ Complete
 
-### Goal
-Create the first POST endpoint.
+## Goal
 
-### Completed
+Create the first API endpoint for scene analysis.
+
+## Completed
+
 - POST /analyse
-- Return dummy scene analysis
+- Return dummy scene analysis JSON
 
 ---
 
-## Sprint 3 — Frontend
-**Status:** 🟡 In Progress
+# Sprint 3 — Serve Frontend
 
-### Goal
-Serve the frontend through FastAPI.
+**Status:** ✅ Complete
 
-### Current Tasks
-- Serve index.html
-- Configure static files
-- Connect JavaScript
+## Goal
 
----
+Serve the frontend from FastAPI.
 
-## Sprint 4 — Frontend ↔ Backend
+## Completed
 
-### Goal
-Call the analyse endpoint from JavaScript.
+- Return index.html
+- Configure StaticFiles
+- Load CSS
+- Load JavaScript
 
 ---
 
-## Sprint 5 — Camera
+# Sprint 4 — Frontend ↔ Backend Communication
 
-### Goal
-Capture an image from the webcam.
+**Status:** ✅ Complete
+
+## Goal
+
+Connect the frontend to the backend.
+
+## Completed
+
+- Analyse button
+- fetch() POST request
+- Receive JSON response
+- Update the browser UI
 
 ---
 
-## Sprint 6 — Scene Analysis
+# Sprint 5 — Camera Capture
 
-### Goal
-Estimate scene brightness and dominant colour.
+**Status:** ✅ Complete
+
+## Goal
+
+Capture a single frame from the USB webcam.
+
+## Completed
+
+- Create capture_frame()
+- Integrate camera capture into /analyse
+- Verify successful camera access
 
 ---
 
-## Sprint 7 — Lighting Engine
+# Sprint 6 — Save Captured Frame
 
-### Goal
+**Status:** ✅ Complete
+
+## Goal
+
+Save captured frames for debugging.
+
+## Completed
+
+- Create save_frame()
+- Save images to assets/captures
+- Display saved image path
+- Verify captured images
+
+## Lessons Learned
+
+- USB cameras require several frames before auto exposure stabilises.
+- Saving intermediate outputs greatly simplifies debugging.
+
+---
+
+# Sprint 7 — Brightness Estimation
+
+**Status:** ⬜ Planned
+
+## Goal
+
+Estimate the average scene brightness.
+
+## Planned
+
+- Create estimate_brightness(frame)
+- Return brightness in API response
+- Display brightness in the frontend
+
+---
+
+# Sprint 8 — Dominant Colour Estimation
+
+**Status:** ⬜ Planned
+
+## Goal
+
+Estimate the dominant scene colour.
+
+## Planned
+
+- Extract dominant RGB colour
+- Return colour in API response
+- Display colour in the frontend
+
+---
+
+# Sprint 9 — Lighting Engine
+
+**Status:** ⬜ Planned
+
+## Goal
+
 Convert scene analysis into lighting decisions.
 
+## Planned
+
+- Create lighting.py
+- Map brightness and colour to lighting state
+- Return lighting state
+
 ---
 
-## Sprint 8 — DMX Output
+# Sprint 10 — DMX Output
 
-### Goal
-Control a real lighting fixture.
+**Status:** ⬜ Planned
+
+## Goal
+
+Control a physical lighting fixture.
+
+## Planned
+
+- Connect DMX interface
+- Send RGB values
+- Verify fixture response
 
 ---
 
-## Sprint 9 — MVP Demo
+# Sprint 11 — MVP Demo
 
-### Goal
-Complete the full interaction pipeline.
+**Status:** ⬜ Planned
 
+## Goal
+
+Complete the first working prototype.
+
+## Success Criteria
+
+```
 Camera
-↓
-
+    ↓
+Capture Frame
+    ↓
 Scene Analysis
-↓
-
+    ↓
 Lighting Decision
-↓
-
-DMX
-↓
-
+    ↓
+DMX Output
+    ↓
 Physical Lighting
+```
+
+The system demonstrates the complete interaction pipeline using one USB camera and one DMX lighting fixture.

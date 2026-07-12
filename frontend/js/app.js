@@ -10,6 +10,7 @@ analyseButton.addEventListener("click", async () => {
 
     result.innerHTML = `
         <p>Status: ${data.status}</p>
+        <p>Image: ${data.image}</p>
         <p>Brightness: ${data.scene.brightness}</p>
         <p>Dominant Color: ${data.scene.dominant_color}</p>
     `;

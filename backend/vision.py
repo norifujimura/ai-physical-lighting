@@ -1,3 +1,7 @@
+import base64
+import json
+import re
+import requests
 import cv2
 from pathlib import Path
 from datetime import datetime
@@ -55,3 +59,37 @@ def estimate_brightness(frame):
     brightness = gray.mean()
 
     return float(brightness)
+
+
+def observe_image(image_path: str, prompt: str) -> dict:
+    """Generate a VLM observation of an image using Ollama.
+    
+    Args:
+        image_path: Path to the image file.
+        prompt: Prompt for the vision model.
+    
+    Returns:
+        dict: Parsed JSON observation from the model, or None if parsing fails.
+    """
+    with open(image_path, "rb") as f:
+        image_b64 = base64.b64encode(f.read()).decode("utf-8")
+
+    res = requests.post(
+        "http://localhost:11434/api/generate",
+        json={
+            "model": "gemma3:4b",
+            "prompt": prompt,
+            "images": [image_b64],
+            "stream": False,
+        },
+    )
+
+    observation_text = res.json()["response"]
+    match = re.search(r"\{.*\}", observation_text, re.DOTALL)
+
+    if match:
+        observation = json.loads(match.group())
+    else:
+        observation = None
+
+    return observation

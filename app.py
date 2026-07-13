@@ -1,9 +1,11 @@
-from backend.vision import capture_frame, estimate_brightness, save_frame
+from backend.vision import capture_frame, estimate_brightness, save_frame, observe_image
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from pathlib import Path
 from fastapi import FastAPI
+
+DEFAULT_OBSERVATION_PROMPT = "Return JSON with the fields you need for the observation."
 
 app = FastAPI(
     title="AI Physical Lighting",
@@ -39,11 +41,14 @@ def analyse():
 
     brightness = estimate_brightness(frame)
 
+    observation = observe_image(str(filepath), DEFAULT_OBSERVATION_PROMPT)
+
     return {
         "status": "success",
         "image": str(filepath),
         "scene": {
             "brightness": brightness,
             "dominant_color": "unknown",
+            "observation": observation,
         },
     }

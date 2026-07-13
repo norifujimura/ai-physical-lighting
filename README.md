@@ -2,29 +2,25 @@
 
 ## Adaptive Lighting
 
-Adaptive Lighting is the first prototype in the **AI for Physical Experience** series.
+Adaptive Lighting is the first application of the broader **AI for Physical Experience** project.
 
-The series explores how artificial intelligence can move beyond screens to shape tangible interactions with light, objects, sound, and space through rapid physical prototyping.
+It explores how humans and AI can collaborate to shape physical experiences through light, using rapid physical prototyping.
 
 **Status:** 🚧 Early Prototype (2-week sprint)
 
 ## Project Goal
 
-This project explores how AI can enhance physical experiences by combining computer vision, scene understanding, and DMX lighting.
+This project explores human-AI collaboration in physical environments by combining computer vision, scene understanding, and DMX lighting.
 
-Rather than building an autonomous lighting controller, the goal is to rapidly prototype human-centred interactions between AI and physical environments.
-
-The prototype investigates how AI can observe a space, interpret contextual information, and suggest or control lighting behaviours that support designers, artists, and technicians.
+Rather than building a fully autonomous lighting system, the goal is to prototype interactions where AI helps people observe a space, interpret context, and make or refine lighting decisions.
 
 ## Why this Project?
 
 Recent advances in AI have dramatically improved our ability to analyse images, understand language, and generate content.
 
-However, most AI applications remain screen-based.
+Most AI applications remain screen-based, but this project explores how AI can extend into the physical world through lighting and tangible interaction.
 
-This project investigates how AI can extend beyond digital interfaces to influence physical environments through lighting, movement, sound, and tangible interaction.
-
-The objective is to develop practical workflows for rapidly prototyping AI-powered physical experiences using accessible hardware and software.
+The goal is to develop practical workflows for rapidly prototyping collaborative AI-powered physical experiences using accessible hardware and software.
 
 ## User Scenario
 
@@ -109,7 +105,7 @@ flowchart TD
 
 ## AI for Physical Experience Series
 
-This repository is part of an ongoing research series exploring how AI can shape physical experiences through rapid prototyping.
+This repository is part of an ongoing research series exploring how humans and AI can collaborate to shape physical experiences through rapid prototyping.
 
 Current projects:
 

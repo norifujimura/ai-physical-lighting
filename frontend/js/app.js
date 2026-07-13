@@ -13,5 +13,6 @@ analyseButton.addEventListener("click", async () => {
         <p>Image: ${data.image}</p>
         <p>Brightness(0~255): ${data.scene.brightness.toFixed(1)}</p>
         <p>Dominant Color: ${data.scene.dominant_color}</p>
+        <pre>${JSON.stringify(data.scene.observation, null, 2)}</pre>
     `;
 });

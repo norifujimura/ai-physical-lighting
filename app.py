@@ -1,4 +1,4 @@
-from backend.vision import capture_frame, save_frame
+from backend.vision import capture_frame, estimate_brightness, save_frame
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
@@ -37,11 +37,13 @@ def analyse():
 
     filepath = save_frame(frame)
 
+    brightness = estimate_brightness(frame)
+
     return {
         "status": "success",
         "image": str(filepath),
         "scene": {
-            "brightness": "unknown",
+            "brightness": brightness,
             "dominant_color": "unknown",
         },
     }

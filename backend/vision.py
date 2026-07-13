@@ -37,3 +37,21 @@ def save_frame(frame):
     cv2.imwrite(str(filepath), frame)
 
     return filepath
+
+
+def estimate_brightness(frame):
+
+    """Estimate the average brightness of an image.
+
+    Returns:
+
+        float: Average grayscale intensity (0–255).
+
+    """
+
+    # Turn to grayscale
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    brightness = gray.mean()
+
+    return float(brightness)
